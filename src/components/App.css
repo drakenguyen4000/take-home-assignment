@@ -10,3 +10,19 @@
 .App > h1 {
 	text-align: center;
 }
+
+.listItem {
+	font-size: 2rem;
+	margin-top: 10px;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+.listItem:hover {
+	color: blue;
+	cursor: pointer;
+}
+
+#portrait {
+	width: 70%;
+}
