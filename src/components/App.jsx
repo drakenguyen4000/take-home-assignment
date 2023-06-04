@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { searchArtworks } from '../api';
 import { SearchForm } from './SearchForm';
-import { List } from './List';
 import { Footer } from './Footer';
 
 import './App.css';
@@ -26,7 +25,19 @@ export function App() {
 		<div className="App">
 			<h1>TCL Career Lab Art Finder</h1>
 			<SearchForm onSearchSubmit={onSearchSubmit} />
-			<List data={data} />
+			{!data ? (
+				<ul></ul>
+			) : (
+				<ul>
+					{data.map((el) => {
+						return (
+							<li key={el.image_id} className="listItem">
+								{el.title} - {el.artist_title}
+							</li>
+						);
+					})}
+				</ul>
+			)}
 			<Footer />
 		</div>
 	);
